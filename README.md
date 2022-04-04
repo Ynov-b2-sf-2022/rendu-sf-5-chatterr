@@ -1,15 +1,23 @@
 
 # Chatterr 🧙‍♂️
 
-A reddit like website, where people can see and send messages
+A reddit like website, where people can create threads and send messages inside
 
-There are different categories
+Senders can evoluate, when someone create a thread or send a message he earns experience
 
-Senders can evoluate, when someone send a message he earns experience
+To get access to the website, you must be authentificated
 
-When a sender get a new level, his nickname is changed with a new designed title
+Users can edit their personal information
 
+### Bonus :
 
+Create different categories for thread
+
+Users can react with their own emojis 🦧
+
+A moderation role with permissions
+
+Personal profil picture
 ## Deployment
 
 To run this project :
@@ -32,7 +40,7 @@ To run this project :
 
 [![Symfony](https://img.shields.io/badge/Framework-Symfony-lightgrey)](https://symfony.com/)
 [![Php](https://img.shields.io/badge/Language-PHP-9cf)](https://php.net/)
-[![Twig](https://img.shields.io/badge/Template-Twig-success)](http://www.gnu.org/licenses/agpl-3.0)
+[![Twig](https://img.shields.io/badge/Language-Twig-success)](http://www.gnu.org/licenses/agpl-3.0)
 
 
 ## Authors
