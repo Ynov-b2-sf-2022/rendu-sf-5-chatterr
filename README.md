@@ -11,13 +11,15 @@ Users can edit their personal information
 
 ### Bonus :
 
-Create different categories for thread
+- Create different categories for thread
 
-Users can react with their own emojis 🦧
+- Users can react with their own emojis 🦧
 
-A moderation role with permissions
+- A moderation role with permissions
 
-Personal profil picture
+- Personal profil picture
+
+- User can comment the messages
 ## Deployment
 
 To run this project :
