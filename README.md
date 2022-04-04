@@ -1,7 +1,7 @@
 
 # Chatterr 🧙‍♂️
 
-A discord like website, where people can see and send messages
+A reddit like website, where people can see and send messages
 
 There are different categories
 
