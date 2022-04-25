@@ -8,7 +8,6 @@ use App\Entity\Message;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-require_once 'vendor/autoload.php';
 
 class AppFixtures extends Fixture
 {

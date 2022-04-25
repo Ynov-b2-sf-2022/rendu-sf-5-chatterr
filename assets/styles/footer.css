@@ -1,0 +1,36 @@
+footer {
+    position: absolute;
+    height: auto;
+    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 20px;
+}
+
+footer .logo {
+    display: block;
+    text-align: center;
+    margin-top: 7px;
+    grid-column: 1;
+    width: 60%;
+}
+
+footer h2 {
+    margin-bottom: 15px;
+}
+
+footer li {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.communaute {
+    grid-column: 2;
+}
+
+.communaute li {
+    display: inline-block;
+    justify-content: space-around;
+    padding-right: 20px;
+}
