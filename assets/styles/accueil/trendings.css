@@ -1,0 +1,16 @@
+.trendings {
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.trendingImages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.trendingImage {
+    width: 100%;
+    border-radius: 1.625rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}

@@ -1,7 +1,6 @@
 footer {
     position: absolute;
     height: auto;
-    
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     padding: 20px;

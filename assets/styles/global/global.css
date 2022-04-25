@@ -1,0 +1,19 @@
+@import url(//db.onlinewebfonts.com/c/b5eae9bab2129f4acd5fcd349dc804fe?family=Nirmala+UI+Semilight);
+
+* {
+    font-family: 'Nirmala UI Semilight', sans-serif;
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+a
+{ 
+ text-decoration:none;
+ color: black;
+}
