@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}chatterr{% endblock %}
 
 {% block body %}
 <style>
@@ -46,7 +46,7 @@
       flex-direction: column;
     }
     .trendings {
-      width: 80%;
+      width: 70%;
       margin-bottom: 20px;
     }
 
@@ -64,10 +64,16 @@
       }
 
       .navbar {
-        background-color: #fff;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 20px;
       }
 
-      .navbar {
+      .sort {
+        background-color: #fff;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -92,6 +98,61 @@
         border: none;
         padding: 10px;
         color: #fff;
+      }
+
+      .threads {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .thread {
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 1.625rem;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+
+      }
+
+      .topThread {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .joinThread {
+        background-color: #5348C7;
+        border: none;
+        padding: 10px;
+        color: #fff;
+        border-radius: 1.625rem;
+      }
+
+      .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .bottomThread {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #5348C7;
+      }
+
+      .threadInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
       }
 
 
@@ -124,26 +185,94 @@
 
   <nav class="navbar">
     <div class="sort">
-      <div class="sortBy">
         <button class="sortByBtn" type="button">Popularité</button>
         <button class="sortByBtn" type="button">Note</button>
         <button class="sortByBtn" type="button">Date de publication</button>
-      </div>
-      <div class="write">
-        <button class="writeBtn" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30.311" height="32.394" viewBox="0 0 30.311 32.394">
-            <path id="Path_11" data-name="Path 11" d="M6.547,27.912h6.426a1.467,1.467,0,0,0,1.076-.47L24.536,16.221h0l4.3-4.5a1.7,1.7,0,0,0,0-2.3L22.414,2.473a1.448,1.448,0,0,0-2.152,0L15.988,7.056h0L5.471,18.277a1.678,1.678,0,0,0-.44,1.15v6.866A1.57,1.57,0,0,0,6.547,27.912ZM21.338,5.906l4.289,4.582-2.152,2.3L19.186,8.205ZM8.062,20.091l8.987-9.6,4.289,4.582-8.987,9.6H8.062ZM30.8,31.15H3.516a1.623,1.623,0,0,0,0,3.238H30.8a1.623,1.623,0,0,0,0-3.238Z" transform="translate(-2 -1.994)" fill="#fff"/>
-          </svg>
-          Message
-        </button>
-        <button class="writeBtn" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30.311" height="32.394" viewBox="0 0 30.311 32.394">
-            <path id="Path_11" data-name="Path 11" d="M6.547,27.912h6.426a1.467,1.467,0,0,0,1.076-.47L24.536,16.221h0l4.3-4.5a1.7,1.7,0,0,0,0-2.3L22.414,2.473a1.448,1.448,0,0,0-2.152,0L15.988,7.056h0L5.471,18.277a1.678,1.678,0,0,0-.44,1.15v6.866A1.57,1.57,0,0,0,6.547,27.912ZM21.338,5.906l4.289,4.582-2.152,2.3L19.186,8.205ZM8.062,20.091l8.987-9.6,4.289,4.582-8.987,9.6H8.062ZM30.8,31.15H3.516a1.623,1.623,0,0,0,0,3.238H30.8a1.623,1.623,0,0,0,0-3.238Z" transform="translate(-2 -1.994)" fill="#fff"/>
-          </svg>
-          Catégorie
-        </button>
-      </div>
+    </div>
+    <div class="write">
+      <button class="writeBtn" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30.311" height="32.394" viewBox="0 0 30.311 32.394">
+          <path id="Path_11" data-name="Path 11" d="M6.547,27.912h6.426a1.467,1.467,0,0,0,1.076-.47L24.536,16.221h0l4.3-4.5a1.7,1.7,0,0,0,0-2.3L22.414,2.473a1.448,1.448,0,0,0-2.152,0L15.988,7.056h0L5.471,18.277a1.678,1.678,0,0,0-.44,1.15v6.866A1.57,1.57,0,0,0,6.547,27.912ZM21.338,5.906l4.289,4.582-2.152,2.3L19.186,8.205ZM8.062,20.091l8.987-9.6,4.289,4.582-8.987,9.6H8.062ZM30.8,31.15H3.516a1.623,1.623,0,0,0,0,3.238H30.8a1.623,1.623,0,0,0,0-3.238Z" transform="translate(-2 -1.994)" fill="#fff"/>
+        </svg>
+        Message
+      </button>
+      <button class="writeBtn" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30.311" height="32.394" viewBox="0 0 30.311 32.394">
+          <path id="Path_11" data-name="Path 11" d="M6.547,27.912h6.426a1.467,1.467,0,0,0,1.076-.47L24.536,16.221h0l4.3-4.5a1.7,1.7,0,0,0,0-2.3L22.414,2.473a1.448,1.448,0,0,0-2.152,0L15.988,7.056h0L5.471,18.277a1.678,1.678,0,0,0-.44,1.15v6.866A1.57,1.57,0,0,0,6.547,27.912ZM21.338,5.906l4.289,4.582-2.152,2.3L19.186,8.205ZM8.062,20.091l8.987-9.6,4.289,4.582-8.987,9.6H8.062ZM30.8,31.15H3.516a1.623,1.623,0,0,0,0,3.238H30.8a1.623,1.623,0,0,0,0-3.238Z" transform="translate(-2 -1.994)" fill="#fff"/>
+        </svg>
+        Catégorie
+      </button>
+    </div>
   </nav>
+
+  <div class="threads">
+    <div class="thread">
+      <div class="topThread">
+        <h4 class="category">categorie/nomdelacategorie</h4>
+        <button class="joinThread" type="button">rejoindre</button>
+      </div>
+      <h2 class="title">titre du thread</h2>
+      <div class="bottomThread">
+        <div class="threadInfo">
+          <p class="comments">500 comments</p>
+          <p class="share">share</p>
+          <p class="save">save</p>
+        </div>
+        <p class="reacts">🦥✅🏗️👋😊😂😘👌😒😍❤️🤣</p>
+      </div>
+
+    </div>
+    <div class="thread">
+      <div class="topThread">
+        <h4 class="category">categorie/nomdelacategorie</h4>
+        <button class="joinThread" type="button">rejoindre</button>
+      </div>
+      <h2 class="title">titre du thread</h2>
+      <div class="bottomThread">
+        <div class="threadInfo">
+          <p class="comments">500 comments</p>
+          <p class="share">share</p>
+          <p class="save">save</p>
+        </div>
+        <p class="reacts">🦥✅🏗️👋😊😂😘👌😒😍❤️🤣</p>
+      </div>
+
+    </div><div class="thread">
+      <div class="topThread">
+        <h4 class="category">categorie/nomdelacategorie</h4>
+        <button class="joinThread" type="button">rejoindre</button>
+      </div>
+      <h2 class="title">titre du thread</h2>
+      <div class="bottomThread">
+        <div class="threadInfo">
+          <p class="comments">500 comments</p>
+          <p class="share">share</p>
+          <p class="save">save</p>
+        </div>
+        <p class="reacts">🦥✅🏗️👋😊😂😘👌😒😍❤️🤣</p>
+      </div>
+
+    </div><div class="thread">
+      <div class="topThread">
+        <h4 class="category">categorie/nomdelacategorie</h4>
+        <button class="joinThread" type="button">rejoindre</button>
+      </div>
+      <h2 class="title">titre du thread</h2>
+      <div class="bottomThread">
+        <div class="threadInfo">
+          <p class="comments">500 comments</p>
+          <p class="share">share</p>
+          <p class="save">save</p>
+        </div>
+        <p class="reacts">🦥✅🏗️👋😊😂😘👌😒😍❤️🤣</p>
+      </div>
+
+    </div>
+    
+  </div>
+
+    
+
 
     
 </div>
