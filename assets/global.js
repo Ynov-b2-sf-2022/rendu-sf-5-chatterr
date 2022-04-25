@@ -1,6 +1,6 @@
-import './styles/herobar.css';
-import './styles/footer.css';
-import './styles/global.css';
+import './styles/global/herobar.css';
+import './styles/global/footer.css';
+import './styles/global/global.css';
 
 document.getElementById ("loginBtn").addEventListener ("click", connexion, false);
 document.getElementById ("signUpBtn").addEventListener ("click", inscription, false);
