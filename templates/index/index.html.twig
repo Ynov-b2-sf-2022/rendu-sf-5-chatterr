@@ -10,37 +10,9 @@
         margin: 0;
         padding: 0;
     }
-    header  { 
-      display: grid;
-      grid-template-columns: repeat(10, 1fr); 
-      text-align: center;
-    }
-    .body { 
-      background-color: #F8F8F8;
-    }
-    .logo {
-      grid-column: 1/3;
-      margin: 20px;
-    }
-    #searchbar {
-      grid-column: 4/8;
-      margin: 15px;
-      border-radius: 1.625rem;
-      padding: 0 3.5rem 0 1.5rem;
-        background: #f5f5f5;
-      outline: none;
-    border: none;
-    }
-    #loginBtn {
-      grid-column: 10;
-      margin: 20px;
-      border: none;
-      border-radius: 1.625rem;
-      background: #5348C7;
-      color: #fff;
-    }
 
     .body {
+      background-color: #F8F8F8;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -100,6 +72,13 @@
         color: #fff;
       }
 
+      .titleContent {
+        display: block;
+        width: 70%;
+      }
+
+
+
       .threads {
         width: 70%;
         display: flex;
@@ -158,13 +137,7 @@
 
 </style>
 
-<header> 
 
-  <svg class="logo" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg76243" version="1.1" viewBox="252.22 350.55 519.57 66.9">  <g id="logo-group">    <image xlink:href="" id="container" style="display: none;" x="272" y="144" width="480" height="480" transform="translate(0 0)"></image>    <g id="logo-center" transform="translate(0 0)">      <image xlink:href="" id="icon_container" style="display: none;" x="0" y="0"></image>      <g id="slogan" style="font-style:normal;font-weight:400;font-size:32px;line-height:1;font-family:Montserrat;font-variant-ligatures:none;text-align:center;text-anchor:middle" transform="translate(0 0)"></g>      <g id="title" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" transform="translate(0 0)">        <path id="path76252" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" d="m 336.04156,-32.76 c 0.72,-2.376 1.872,-4.536 3.384,-6.408 1.44,-1.872 3.312,-3.456 5.472,-4.608 2.16,-1.152 4.68,-1.8 7.56,-1.8 1.296,0 2.592,0.144 3.96,0.432 1.296,0.288 2.592,0.792 3.888,1.44 1.224,0.72 2.448,1.584 3.528,2.664 1.08,1.152 2.016,2.52 2.808,4.104 l 5.112,-3.312 c -1.584,-3.312 -4.032,-5.976 -7.272,-8.064 -3.312,-2.016 -7.2,-3.096 -11.736,-3.096 -3.888,0 -7.272,0.792 -10.296,2.232 -3.096,1.512 -5.616,3.456 -7.704,5.904 -2.088,2.448 -3.672,5.184 -4.752,8.208 -0.792,2.16 -1.224,4.32 -1.44,6.408 h 6.552 c 0.216,-1.368 0.504,-2.736 0.936,-4.104 z m 31.248,18.36 c -0.72,1.584 -1.656,2.952 -2.808,4.104 -1.152,1.152 -2.376,2.088 -3.6,2.808 -1.368,0.72 -2.664,1.296 -4.104,1.584 -1.44,0.36 -2.808,0.504 -4.104,0.504 -2.592,0 -4.896,-0.504 -7.056,-1.656 -2.16,-1.08 -4.032,-2.592 -5.616,-4.464 -1.656,-1.872 -2.88,-3.96 -3.744,-6.408 -0.576,-1.512 -0.936,-3.024 -1.152,-4.68 h -6.552 c 0.288,2.16 0.792,4.248 1.584,6.336 1.152,3.168 2.808,5.976 4.968,8.424 2.16,2.448 4.68,4.464 7.632,5.976 2.88,1.584 6.12,2.304 9.648,2.304 1.944,0 3.96,-0.216 6.048,-0.792 2.016,-0.504 3.96,-1.224 5.832,-2.304 1.872,-0.936 3.528,-2.232 4.968,-3.672 1.44,-1.44 2.592,-3.168 3.456,-5.112 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#1a181a" stroke="#1a181a" transform="translate(0 315.47152) translate(252.23342239999994 35.09168) scale(1.29) translate(-328.55356 51.408)"></path>        <path id="path76254" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" d="m 380.79969,0 h 6.48 v -51.12 h -6.48 z m 34.632,-51.12 v 22.104 h -22.392 v 5.76 h 22.392 V 0 h 6.48 v -51.12 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#1a181a" stroke="#1a181a" transform="translate(0 315.47152) translate(326.08093009999993 35.4632) scale(1.29) translate(-380.79969 51.12)"></path>        <path id="path76256" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" d="m 457.92856,-44.136 -2.808,7.632 6.48,16.488 h -12.816 l -1.944,5.04 h 16.2 L 469.08856,0 h 6.912 z m -2.808,-6.984 h -5.472 L 428.69656,0 h 6.624 l 17.064,-43.632 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#1a181a" stroke="#1a181a" transform="translate(0 315.47152) translate(394.3178923999999 35.4632) scale(1.29) translate(-428.69656 51.12)"></path>        <path id="path76258" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" d="m 490.85619,0 h 6.48 v -38.88 h -6.48 z m -17.64,-51.12 v 5.76 h 41.76 v -5.76 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#1a181a" stroke="#1a181a" transform="translate(0 315.47152) translate(458.1982150999999 35.4632) scale(1.29) translate(-473.21619 51.12)"></path>        <path id="path76260" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" d="m 535.01244,0 h 6.48 v -38.88 h -6.48 z m -17.64,-51.12 v 5.76 h 41.76 v -5.76 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#1a181a" stroke="#1a181a" transform="translate(0 315.47152) translate(521.6097775999999 35.4632) scale(1.29) translate(-517.37244 51.12)"></path>        <path id="path76262" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" d="m 572.90469,-45.36 h 27.576 v -5.76 h -34.056 v 15.84 h 6.48 z m -6.48,39.6 V 0 h 34.704 v -5.76 z m 6.48,-17.64 h 23.976 v -5.4 h -30.456 v 16.56 h 6.48 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#1a181a" stroke="#1a181a" transform="translate(0 315.47152) translate(591.3371801000001 35.4632) scale(1.29) translate(-566.42469 51.12)"></path>        <path id="path76264" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" d="m 636.65844,-19.584 c 1.584,-0.36 3.096,-1.08 4.392,-2.088 1.296,-0.936 2.448,-2.088 3.384,-3.456 0.936,-1.296 1.656,-2.808 2.16,-4.464 0.504,-1.656 0.792,-3.384 0.792,-5.184 0,-2.016 -0.432,-3.96 -1.152,-5.904 -0.792,-1.944 -1.872,-3.672 -3.24,-5.256 -1.368,-1.584 -3.024,-2.808 -4.896,-3.744 -1.872,-0.936 -3.96,-1.44 -6.192,-1.44 h -21.888 V 0 h 6.48 v -18.36 h 6.48 l -3.6,-5.76 h -2.88 v -21.24 h 15.048 c 1.224,0 2.376,0.288 3.528,0.864 1.152,0.576 2.088,1.296 2.952,2.304 0.864,1.008 1.512,2.088 2.016,3.384 0.504,1.296 0.792,2.664 0.792,4.032 0,1.44 -0.216,2.736 -0.648,4.032 -0.504,1.368 -1.08,2.448 -1.8,3.456 -0.792,1.008 -1.728,1.8 -2.808,2.304 -1.08,0.576 -2.304,0.864 -3.6,0.864 h -5.688 l 3.744,5.76 11.664,18.36 h 7.344 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#1a181a" stroke="#1a181a" transform="translate(0 315.47152) translate(654.0231176000001 35.4632) scale(1.29) translate(-610.01844 51.12)"></path>        <path id="path76266" style="font-style:normal;font-weight:500;font-size:72px;line-height:1;font-family:'Raleway Medium Alt1';font-variant-ligatures:none;text-align:center;text-anchor:middle" d="m 683.90844,-19.584 c 1.584,-0.36 3.096,-1.08 4.392,-2.088 1.296,-0.936 2.448,-2.088 3.384,-3.456 0.936,-1.296 1.656,-2.808 2.16,-4.464 0.504,-1.656 0.792,-3.384 0.792,-5.184 0,-2.016 -0.432,-3.96 -1.152,-5.904 -0.792,-1.944 -1.872,-3.672 -3.24,-5.256 -1.368,-1.584 -3.024,-2.808 -4.896,-3.744 -1.872,-0.936 -3.96,-1.44 -6.192,-1.44 h -21.888 V 0 h 6.48 v -18.36 h 6.48 l -3.6,-5.76 h -2.88 v -21.24 h 15.048 c 1.224,0 2.376,0.288 3.528,0.864 1.152,0.576 2.088,1.296 2.952,2.304 0.864,1.008 1.512,2.088 2.016,3.384 0.504,1.296 0.792,2.664 0.792,4.032 0,1.44 -0.216,2.736 -0.648,4.032 -0.504,1.368 -1.08,2.448 -1.8,3.456 -0.792,1.008 -1.728,1.8 -2.808,2.304 -1.08,0.576 -2.304,0.864 -3.6,0.864 h -5.688 l 3.744,5.76 11.664,18.36 h 7.344 z" stroke-width="0" stroke-linejoin="miter" stroke-miterlimit="2" fill="#1a181a" stroke="#1a181a" transform="translate(0 315.47152) translate(721.4256176000001 35.4632) scale(1.29) translate(-657.26844 51.12)"></path>      </g>      <image xlink:href="" id="icon" style="display: none;" x="0" y="0"></image>    </g>  </g></svg>
-
-  <input type="text" id="searchbar" placeholder="Search something..">
-  <button id="loginBtn" type="button">Connexion</button> 
-</header>
 
 
 <div class="body">
@@ -205,7 +178,16 @@
     </div>
   </nav>
 
+  <div class="titleContent">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" width="51.718" height="67" viewBox="0 0 51.718 67">
+        <path id="Path_7" data-name="Path 7" d="M18.71,23.4,18.7,23.4l-.006.006Zm28.6-.565a3.58,3.58,0,0,0-.661-.529,2.743,2.743,0,0,0-2.266-.3,2.915,2.915,0,0,0-1.754,1.541,17.406,17.406,0,0,1-4.017,5.383,27.625,27.625,0,0,0,.383-4.573A26.678,26.678,0,0,0,26.352,1.394a2.745,2.745,0,0,0-2.783-.03,3.046,3.046,0,0,0-1.5,2.47,21.679,21.679,0,0,1-7.1,14.97l-.662.568a25.036,25.036,0,0,0-5.71,5.641A28.363,28.363,0,0,0,3.848,48.846,26.8,26.8,0,0,0,19.1,67.139a2.746,2.746,0,0,0,2.688-.29,3.075,3.075,0,0,0,1.27-2.514,3.338,3.338,0,0,0-.143-.947,22.241,22.241,0,0,1-.546-7.818A26.47,26.47,0,0,0,34.757,67.737a2.729,2.729,0,0,0,2.055.115A26.718,26.718,0,0,0,53.97,48.429,28.261,28.261,0,0,0,47.31,22.833ZM36.091,61.7A20.9,20.9,0,0,1,25.814,48.362a28.3,28.3,0,0,1-.516-2.919A2.967,2.967,0,0,0,23,42.884a2.681,2.681,0,0,0-.55-.056,2.848,2.848,0,0,0-2.49,1.517A28.294,28.294,0,0,0,16.5,58.635a21.452,21.452,0,0,1-7.61-14.2,21.98,21.98,0,0,1,4.233-15.688,19.271,19.271,0,0,1,4.488-4.416,2.151,2.151,0,0,0,.213-.166s.852-.744.882-.761A27.4,27.4,0,0,0,27.032,9.371a21.206,21.206,0,0,1,3.983,24.5,3.162,3.162,0,0,0,.341,3.343,2.784,2.784,0,0,0,3.059.952,22.6,22.6,0,0,0,11.1-8.14,22.176,22.176,0,0,1,2.537,18.233A20.788,20.788,0,0,1,36.091,61.7Z" transform="translate(-3 -1)" fill="#5348c7"/>
+      </svg>
+      Discussions
+    </h2>
+  </div>
   <div class="threads">
+  
     <div class="thread">
       <div class="topThread">
         <h4 class="category">categorie/nomdelacategorie</h4>
@@ -230,9 +212,24 @@
       <h2 class="title">titre du thread</h2>
       <div class="bottomThread">
         <div class="threadInfo">
-          <p class="comments">500 comments</p>
-          <p class="share">share</p>
-          <p class="save">save</p>
+          <p class="comments">
+            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27">
+              <path id="Icon_material-chat_bubble_outline" data-name="Icon material-chat_bubble_outline" d="M27.3,3H5.7A2.708,2.708,0,0,0,3,5.7V30l5.4-5.4H27.3A2.708,2.708,0,0,0,30,21.9V5.7A2.708,2.708,0,0,0,27.3,3Zm0,18.9H8.4L5.7,24.6V5.7H27.3Z" transform="translate(-3 -3)" fill="#707070"/>
+            </svg>
+            500 comments
+          </p>
+          <p class="share">
+            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="29.88" viewBox="0 0 27 29.88">
+              <path id="Icon_material-share" data-name="Icon material-share" d="M27,24.12a4.368,4.368,0,0,0-2.94,1.155L13.365,19.05A4.91,4.91,0,0,0,13.5,18a4.91,4.91,0,0,0-.135-1.05L23.94,10.785A4.49,4.49,0,1,0,22.5,7.5a4.91,4.91,0,0,0,.135,1.05L12.06,14.715a4.5,4.5,0,1,0,0,6.57l10.68,6.24a4.232,4.232,0,0,0-.12.975A4.38,4.38,0,1,0,27,24.12Z" transform="translate(-4.5 -3)" fill="#707070"/>
+            </svg>
+            share
+          </p>
+          <p class="save">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="27.525" viewBox="0 0 30 27.525">
+              <path id="Icon_material-favorite-border" data-name="Icon material-favorite-border" d="M24.75,4.5A8.983,8.983,0,0,0,18,7.635,8.983,8.983,0,0,0,11.25,4.5,8.17,8.17,0,0,0,3,12.75c0,5.67,5.1,10.29,12.825,17.31L18,32.025l2.175-1.98C27.9,23.04,33,18.42,33,12.75A8.17,8.17,0,0,0,24.75,4.5Zm-6.6,23.325-.15.15-.15-.15C10.71,21.36,6,17.085,6,12.75A5.127,5.127,0,0,1,11.25,7.5,5.864,5.864,0,0,1,16.6,11.04H19.41A5.827,5.827,0,0,1,24.75,7.5,5.127,5.127,0,0,1,30,12.75C30,17.085,25.29,21.36,18.15,27.825Z" transform="translate(-3 -4.5)" fill="#707070"/>
+            </svg>
+            save
+          </p>
         </div>
         <p class="reacts">🦥✅🏗️👋😊😂😘👌😒😍❤️🤣</p>
       </div>
