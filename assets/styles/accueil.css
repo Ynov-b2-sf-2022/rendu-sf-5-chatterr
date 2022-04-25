@@ -1,0 +1,192 @@
+.body {
+    background-color: #F8F8F8;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.trendings {
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.trendingImages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.trendingImage {
+    width: 100%;
+    border-radius: 1.625rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.navbar {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.sort {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 20px;
+    height: 60px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+.sortByBtn {
+    background-color: #fff;
+    border: solid 1px #5348C7;
+    border-radius: 1.625rem;
+    padding: 0 3.5rem 0 1.5rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.writeBtn {
+    background-color: #5348C7;
+    border: none;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+.titleContent {
+    display: block;
+    width: 70%;
+}
+
+.threads {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thread {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 1.625rem;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+.topThread {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.joinThread {
+    background-color: #5348C7;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 1.625rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bottomThread {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #5348C7;
+}
+
+.threadInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#connexionPopUp {
+    width: 400px;
+    height: 450px;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(1);
+    padding: 20px;
+    border-radius: 20px;
+    background: #ffffff;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    display: none;
+}
+
+#inscriptionPopUp {
+    width: 400px;
+    height: 450px;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(1);
+    padding: 20px;
+    border-radius: 20px;
+    background: #ffffff;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    display: none;
+}
+
+.signIn {
+    font-weight: 600;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 32px;
+    padding-bottom: 10px;
+}
+
+.input-field .validate {
+    border: none;
+    margin-bottom: 15px;
+    color: #707070;
+    background: #F8F8F8;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 5px #F8F8F8, inset -5px -5px 5px #F8F8F8;
+    outline: none;
+    padding-top: 20px;
+}
+
+.createAccount {
+    color: #707070;
+    padding: 20px;
+}
+
+#overlay{
+  position: fixed;
+  display: none;
+  width:100%;
+  height:100%;
+  background-color: black;
+  background-color:rgba(0,0,0,.75)
+}
+
+.bar {
+    padding: 20px;
+}
+
+.signInButton {
+    cursor: pointer;
+}
