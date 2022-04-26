@@ -24,11 +24,10 @@
   </div>
 
   <div class="threads">
-    {% include './components/thread.html.twig' %}
-    {% include './components/thread.html.twig' %}
-    {% include './components/thread.html.twig' %}
-    {% include './components/thread.html.twig' %}
-    {% include './components/thread.html.twig' %}
+    {% for message in messages %}
+      {% set vars = {'content' : message.content } %}
+      {% include './components/thread.html.twig' with vars  %}
+    {% endfor %}
   </div>
 </div>
 {% endblock %}
