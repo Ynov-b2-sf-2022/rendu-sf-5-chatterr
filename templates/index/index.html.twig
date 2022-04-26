@@ -25,7 +25,10 @@
 
   <div class="threads">
     {% for message in messages %}
-      {% set vars = {'content' : message.content } %}
+      {% set vars = {
+        'content' : message.content,
+        'category' : message.category.name
+      } %}
       {% include './components/thread.html.twig' with vars  %}
     {% endfor %}
   </div>

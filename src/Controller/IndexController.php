@@ -10,10 +10,10 @@ use App\Repository\MessageRepository;
 class IndexController extends AbstractController
 {
     #[Route('/', name: 'app_index')]
-    public function index(MessageRepository $repository): Response
+    public function index(MessageRepository $messageRepository): Response
     {
         //retrieve all the messages 
-        $messages = $repository->findAll();
+        $messages = $messageRepository->findAll();
         //display the messages
 
         return $this->render('index/index.html.twig', [
