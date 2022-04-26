@@ -15,7 +15,7 @@ class Category
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 50)]
+    #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'category')]
@@ -23,11 +23,11 @@ class Category
     private $user;
 
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Message::class)]
-    private $categoryMessage;
+    private $message;
 
     public function __construct()
     {
-        $this->categoryMessage = new ArrayCollection();
+        $this->message = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -62,27 +62,27 @@ class Category
     /**
      * @return Collection<int, Message>
      */
-    public function getCategoryMessage(): Collection
+    public function getMessage(): Collection
     {
-        return $this->categoryMessage;
+        return $this->message;
     }
 
-    public function addCategoryMessage(Message $categoryMessage): self
+    public function addMessage(Message $message): self
     {
-        if (!$this->categoryMessage->contains($categoryMessage)) {
-            $this->categoryMessage[] = $categoryMessage;
-            $categoryMessage->setCategory($this);
+        if (!$this->message->contains($message)) {
+            $this->message[] = $message;
+            $message->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeCategoryMessage(Message $categoryMessage): self
+    public function removeMessage(Message $message): self
     {
-        if ($this->categoryMessage->removeElement($categoryMessage)) {
+        if ($this->message->removeElement($message)) {
             // set the owning side to null (unless already changed)
-            if ($categoryMessage->getCategory() === $this) {
-                $categoryMessage->setCategory(null);
+            if ($message->getCategory() === $this) {
+                $message->setCategory(null);
             }
         }
 

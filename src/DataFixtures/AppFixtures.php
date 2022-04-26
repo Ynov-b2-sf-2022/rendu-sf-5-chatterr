@@ -16,48 +16,49 @@ class AppFixtures extends Fixture
         //import faker
         $faker = \Faker\Factory::create('fr_FR');
 
-        //create 5 grades
-        $grades = [];
-        for ($i = 0; $i < 3; $i++) {
+        //create grades
+        $grades =  ["citoyen", "maire", "président", "dieu"];
+        $typeGrade = [];
+        foreach ($grades as $value){
             $grade = new Grade();
-            $grade->setName($faker->name);
+            $grade->setName($value);
+            $typeGrade[] = $grade;
             $manager->persist($grade);
-            $grades[] = $grade;
         }
 
-        //create 5 users
+        //create 10 users
         $users = [];
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $user = new User();
             $user->setUsername($faker->userName)
                 ->setPassword($faker->password(8, 20))
                 ->setEmail($faker->email)
+                ->setRoles(["ROLE_USER"])
                 ->setExperience($faker->numberBetween(0, 100))
-                ->setGrade($faker->randomElement($grades));
+                ->setGrade($faker->randomElement($typeGrade));
             $users[] = $user;
             $manager->persist($user);
         }
 
         //create 5 categories
         $categories = [];
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             $category = new Category();
-            $category->setName($faker->name)
+            $category->setName($faker->word)
                 ->setUser($faker->randomElement($users));
             $categories[] = $category;
             $manager->persist($category);
         }
 
-        //create 5 messages
-        for ($i = 0; $i < 15; $i++) {
+        //create 20 messages
+        for ($i = 0; $i < 20; $i++) {
             $message = new Message();
-            $message->setContent($faker->text)
+            $message->setContent($faker->sentence(15))
                 ->setUser($faker->randomElement($users))
                 ->setCategory($faker->randomElement($categories));
             $manager->persist($message);
         }
 
         $manager->flush();
-
     }
 }
