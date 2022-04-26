@@ -27,6 +27,7 @@
     {% for message in messages %}
       {% set vars = {
         'content' : message.content,
+        'author' : message.user.username,
         'category' : message.category.name
       } %}
       {% include './components/thread.html.twig' with vars  %}
