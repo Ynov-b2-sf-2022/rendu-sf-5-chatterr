@@ -18,9 +18,11 @@ class AppFixtures extends Fixture
 
         //create grades
         $grades =  ["citoyen", "maire", "président", "dieu"];
+        $typeGrade = [];
         foreach ($grades as $value){
             $grade = new Grade();
             $grade->setName($value);
+            $typeGrade[] = $grade;
             $manager->persist($grade);
         }
 
@@ -33,7 +35,7 @@ class AppFixtures extends Fixture
                 ->setEmail($faker->email)
                 ->setRoles(["ROLE_USER"])
                 ->setExperience($faker->numberBetween(0, 100))
-                ->setGrade($faker->randomElement($grades));
+                ->setGrade($faker->randomElement($typeGrade));
             $users[] = $user;
             $manager->persist($user);
         }
@@ -56,7 +58,7 @@ class AppFixtures extends Fixture
                 ->setCategory($faker->randomElement($categories));
             $manager->persist($message);
         }
-        
+
         $manager->flush();
     }
 }
