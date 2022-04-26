@@ -34,6 +34,10 @@
     padding-bottom: 10px;
 }
 
+#signUpBtn {
+    cursor: pointer;
+}
+
 .input-field .validate {
     border: none;
     margin-bottom: 15px;
