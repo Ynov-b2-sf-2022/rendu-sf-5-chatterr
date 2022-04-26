@@ -20,7 +20,7 @@ class Message
     #[ORM\JoinColumn(nullable: false)]
     private $user;
 
-    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'categoryMessage')]
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'message')]
     #[ORM\JoinColumn(nullable: false)]
     private $category;
 
