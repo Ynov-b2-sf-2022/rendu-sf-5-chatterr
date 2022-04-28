@@ -22,7 +22,7 @@ Encore
      */
     .addEntry('global', './assets/global.js')
     .addEntry('accueil', './assets/accueil.js')
-    .addEntry('registration', './assets/registration.js')
+    .addEntry('security', './assets/security.js')
 
 
 

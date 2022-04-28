@@ -1,0 +1,58 @@
+.formulaire {
+  padding-left: 30%;
+  padding-right: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding-left: 30%;
+  padding-right: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin-bottom: 15px;
+  color: #707070;
+  background: #F8F8F8;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 5px #F8F8F8, inset -5px -5px 5px #F8F8F8;
+  outline: none;
+  padding-top: 20px;
+}
+
+button {
+  background: white;
+  width: 150px;
+  height: 70px;
+  margin: 30px;
+}
+
+.customBtn {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 40px;
+  border-radius: 10px;
+  border: solid 3px #5348C7;
+  transition: 0.7s;
+}
+.customBtn:hover {
+  box-shadow: inset 0 0 0 1em #5348C7;
+}
+
+.loginForm {
+  height: 70vh;
+}
