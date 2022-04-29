@@ -19,7 +19,10 @@
       </svg>
       <h2 class="discussion"> Catégories récentes </h2>
   </div>
-  {% include './components/categories.html.twig' %}
+  {% set categoryVars = {
+        'categories' : categories,
+      } %}
+  {% include './components/categories.html.twig' with categoryVars %}
   {% include './components/navbar.html.twig' %}
   
 
