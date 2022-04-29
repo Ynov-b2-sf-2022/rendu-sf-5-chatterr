@@ -15,4 +15,12 @@ class ProfilController extends AbstractController
             'controller_name' => 'ProfilController',
         ]);
     }
+
+    /**
+     * @Route("/users", name="users")
+     */
+    public function profil()
+    {
+        return $this->render('profil/index.html.twig');
+    }
 }
