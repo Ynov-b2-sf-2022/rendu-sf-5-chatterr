@@ -1,102 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MessageController!{% endblock %}
+{% block title %}Hello MessageController!
+{% endblock %}
 
 {% block body %}
-<style>
-@import url(//db.onlinewebfonts.com/c/b5eae9bab2129f4acd5fcd349dc804fe?family=Nirmala+UI+Semilight);
-    * {
-      font-family: 'Nirmala UI Semilight', sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    .body {
-      background-color: #F8F8F8;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      padding-top: 20px;
-    }
 
-    .thread {
-        width: 70%;
-        margin-bottom: 20px;
-        background-color: #fff;
-        border-radius: 1.625rem;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+	{% block stylesheets %}
+		{{ encore_entry_link_tags('message') }}
+		{{ encore_entry_link_tags('global') }}
+	{% endblock %}
 
-      }
-
-      .topThread {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .joinThread {
-        background-color: #5348C7;
-        border: none;
-        padding: 10px;
-        color: #fff;
-        border-radius: 1.625rem;
-      }
-
-      .title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      .bottomThread {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        border-top: 1px solid #5348C7;
-      }
-
-      .threadInfo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-      }
-</style>
-
-<div class="body">
-    <div class="thread">
-      <div class="topThread">
-        <h4 class="category">categorie/nomdelacategorie</h4>
-        <button class="joinThread" type="button">rejoindre</button>
-      </div>
-      <h2 class="title">titre du thread</h2>
-      <div class="bottomThread">
-        <div class="threadInfo">
-          <p class="comments">
-            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27">
-              <path id="Icon_material-chat_bubble_outline" data-name="Icon material-chat_bubble_outline" d="M27.3,3H5.7A2.708,2.708,0,0,0,3,5.7V30l5.4-5.4H27.3A2.708,2.708,0,0,0,30,21.9V5.7A2.708,2.708,0,0,0,27.3,3Zm0,18.9H8.4L5.7,24.6V5.7H27.3Z" transform="translate(-3 -3)" fill="#707070"/>
-            </svg>
-            500 comments
-          </p>
-          <p class="share">
-            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="29.88" viewBox="0 0 27 29.88">
-              <path id="Icon_material-share" data-name="Icon material-share" d="M27,24.12a4.368,4.368,0,0,0-2.94,1.155L13.365,19.05A4.91,4.91,0,0,0,13.5,18a4.91,4.91,0,0,0-.135-1.05L23.94,10.785A4.49,4.49,0,1,0,22.5,7.5a4.91,4.91,0,0,0,.135,1.05L12.06,14.715a4.5,4.5,0,1,0,0,6.57l10.68,6.24a4.232,4.232,0,0,0-.12.975A4.38,4.38,0,1,0,27,24.12Z" transform="translate(-4.5 -3)" fill="#707070"/>
-            </svg>
-            share
-          </p>
-          <p class="save">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="27.525" viewBox="0 0 30 27.525">
-              <path id="Icon_material-favorite-border" data-name="Icon material-favorite-border" d="M24.75,4.5A8.983,8.983,0,0,0,18,7.635,8.983,8.983,0,0,0,11.25,4.5,8.17,8.17,0,0,0,3,12.75c0,5.67,5.1,10.29,12.825,17.31L18,32.025l2.175-1.98C27.9,23.04,33,18.42,33,12.75A8.17,8.17,0,0,0,24.75,4.5Zm-6.6,23.325-.15.15-.15-.15C10.71,21.36,6,17.085,6,12.75A5.127,5.127,0,0,1,11.25,7.5,5.864,5.864,0,0,1,16.6,11.04H19.41A5.827,5.827,0,0,1,24.75,7.5,5.127,5.127,0,0,1,30,12.75C30,17.085,25.29,21.36,18.15,27.825Z" transform="translate(-3 -4.5)" fill="#707070"/>
-            </svg>
-            save
-          </p>
-        </div>
-        <p class="reacts">🦥✅🏗️👋😊😂😘👌😒😍❤️🤣</p>
-      </div>
-    </div>
-</div>
+	<div class="body">
+		<div class="thread">
+			<div class="topThread">
+				<h4 class="category">categorie/nomdelacategorie</h4>
+				<button class="joinThread" type="button">rejoindre</button>
+			</div>
+			<h2 class="title">titre du thread</h2>
+			<div class="bottomThread">
+				<div class="threadInfo">
+					<p class="comments">
+						<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewbox="0 0 27 27">
+							<path id="Icon_material-chat_bubble_outline" data-name="Icon material-chat_bubble_outline" d="M27.3,3H5.7A2.708,2.708,0,0,0,3,5.7V30l5.4-5.4H27.3A2.708,2.708,0,0,0,30,21.9V5.7A2.708,2.708,0,0,0,27.3,3Zm0,18.9H8.4L5.7,24.6V5.7H27.3Z" transform="translate(-3 -3)" fill="#707070"/>
+						</svg>
+						500 comments
+					</p>
+					<p class="share">
+						<svg xmlns="http://www.w3.org/2000/svg" width="27" height="29.88" viewbox="0 0 27 29.88">
+							<path id="Icon_material-share" data-name="Icon material-share" d="M27,24.12a4.368,4.368,0,0,0-2.94,1.155L13.365,19.05A4.91,4.91,0,0,0,13.5,18a4.91,4.91,0,0,0-.135-1.05L23.94,10.785A4.49,4.49,0,1,0,22.5,7.5a4.91,4.91,0,0,0,.135,1.05L12.06,14.715a4.5,4.5,0,1,0,0,6.57l10.68,6.24a4.232,4.232,0,0,0-.12.975A4.38,4.38,0,1,0,27,24.12Z" transform="translate(-4.5 -3)" fill="#707070"/>
+						</svg>
+						share
+					</p>
+					<p class="save">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="27.525" viewbox="0 0 30 27.525">
+							<path id="Icon_material-favorite-border" data-name="Icon material-favorite-border" d="M24.75,4.5A8.983,8.983,0,0,0,18,7.635,8.983,8.983,0,0,0,11.25,4.5,8.17,8.17,0,0,0,3,12.75c0,5.67,5.1,10.29,12.825,17.31L18,32.025l2.175-1.98C27.9,23.04,33,18.42,33,12.75A8.17,8.17,0,0,0,24.75,4.5Zm-6.6,23.325-.15.15-.15-.15C10.71,21.36,6,17.085,6,12.75A5.127,5.127,0,0,1,11.25,7.5,5.864,5.864,0,0,1,16.6,11.04H19.41A5.827,5.827,0,0,1,24.75,7.5,5.127,5.127,0,0,1,30,12.75C30,17.085,25.29,21.36,18.15,27.825Z" transform="translate(-3 -4.5)" fill="#707070"/>
+						</svg>
+						save
+					</p>
+				</div>
+				<p class="reacts">🦥✅🏗️👋😊😂😘👌😒😍❤️🤣</p>
+			</div>
+		</div>
+	</div>
 {% endblock %}
