@@ -23,6 +23,8 @@ Encore
     .addEntry('global', './assets/global.js')
     .addEntry('accueil', './assets/accueil.js')
     .addEntry('security', './assets/security.js')
+    .addEntry('profil', './assets/profil.js')
+    .addEntry('message', './assets/message.js')
 
 
 

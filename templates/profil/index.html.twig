@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('profil') }}
+	{{ encore_entry_link_tags('global') }}
+{% endblock %}
+
+{% block body %}
+	<div class="wrapper">
+		<div class="profilContainer">
+			<h1 class="title">Profil</h1>
+			<div class="grade data">Grade :
+				{{ app.user.grade.name }}
+				🧞</div>
+			<div class="username data">Pseudo :
+				{{ app.user.username }}
+				🐧</div>
+			<div class="email data">Mail :
+				{{ app.user.email }}
+				🔗</div>
+			<div class="password data">Mot de passe : Chuuut 🕵️</div>
+			<div class="experience data">Expérience :
+				{{ app.user.experience }}
+				/ 100 🧪</div>
+		</div>
+	</div>
+{% endblock %}
