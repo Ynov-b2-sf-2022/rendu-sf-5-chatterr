@@ -44,6 +44,7 @@ class ResetPasswordController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            echo $form->getData()['email'];
             return $this->processSendingPasswordResetEmail(
                 $form->get('email')->getData(),
                 $mailer,
@@ -167,8 +168,6 @@ class ResetPasswordController extends AbstractController
             ->context([
                 'resetToken' => $resetToken,
             ]);
-        print_r("\n");
-        print_r($email);
         $mailer->send($email);
 
         // Store the token object in session for retrieval in check-email route.
