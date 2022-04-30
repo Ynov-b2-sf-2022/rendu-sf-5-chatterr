@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfilController!
+{% block title %}Profil
 {% endblock %}
 
 {% block stylesheets %}
@@ -13,18 +13,25 @@
 		<div class="profilContainer">
 			<h1 class="title">Profil</h1>
 			<div class="grade data">Grade :
-				{{ app.user.grade.name }}
-				🧞</div>
+				{{ app.user.grade.name }}🧞
+			</div>
 			<div class="username data">Pseudo :
-				{{ app.user.username }}
-				🐧</div>
+				{{ app.user.username }}🐧
+			</div>
 			<div class="email data">Mail :
-				{{ app.user.email }}
-				🔗</div>
-			<div class="password data">Mot de passe : Chuuut 🕵️</div>
+				{{ app.user.email }}🔗
+			</div>
+			<div class="password data">
+				Mot de passe : Chuuut 🕵️
+			</div>
 			<div class="experience data">Expérience :
-				{{ app.user.experience }}
-				/ 100 🧪</div>
+				{{ app.user.experience }}/ 100 🧪
+			</div>
+			<div class"reset">
+				<a href"reset-password">
+					<button class="changePassword">Changer mot de passe 🔑</button>
+				</a>
+			</div>
 		</div>
 	</div>
 {% endblock %}

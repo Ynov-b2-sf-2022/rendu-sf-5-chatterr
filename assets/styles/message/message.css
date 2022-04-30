@@ -4,52 +4,51 @@
     align-items: center;
     flex-direction: column;
     padding-top: 20px;
-  }
+}
 
-  .thread {
-      width: 70%;
-      margin-bottom: 20px;
-      background-color: #fff;
-      border-radius: 1.625rem;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+.thread {
+    width: 70%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 1.625rem;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
 
-    }
+.topThread {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    .topThread {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
+.joinThread {
+    background-color: #5348C7;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 1.625rem;
+}
 
-    .joinThread {
-      background-color: #5348C7;
-      border: none;
-      padding: 10px;
-      color: #fff;
-      border-radius: 1.625rem;
-    }
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-    .title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+.bottomThread {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #5348C7;
+}
 
-    .bottomThread {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid #5348C7;
-    }
-
-    .threadInfo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-    }
+.threadInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
