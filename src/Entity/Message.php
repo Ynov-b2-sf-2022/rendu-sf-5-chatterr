@@ -29,6 +29,11 @@ class Message
         return $this->id;
     }
 
+    public function __toString(): string
+    {
+        return $this->name;
+    }
+
     public function getContent(): ?string
     {
         return $this->content;
