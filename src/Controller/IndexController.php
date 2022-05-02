@@ -19,9 +19,17 @@ class IndexController extends AbstractController
         //retrieve last 4 categories
         $categories = $categoryRepository->findBy([], ['id' => 'DESC']);
 
+        $connected = false;
+
+        //check if the user is connected 
+        if ($this->getUser()) {
+            $connected = true;
+        }
+
         return $this->render('index/index.html.twig', [
             'messages' => $messages,
             'categories' => $categories,
+            'connected' => $connected,
         ]);
     }
 }
