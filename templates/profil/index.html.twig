@@ -30,7 +30,7 @@
 					<button class="logoutButton">Deconnexion</button>
 				</a>
 				{% if role[0] == "ROLE_ADMIN" %}
-					<a href="{{ path('app_admin_index') }}">
+					<a href="{{ path('admin') }}">
 						<button class="adminButton">Administration</button>
 					</a>
 				{% endif %}
