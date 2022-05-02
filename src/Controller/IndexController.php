@@ -17,7 +17,7 @@ class IndexController extends AbstractController
         $messages = $messageRepository->findAll();
         
         //retrieve last 4 categories
-        $categories = $categoryRepository->findBy([], ['id' => 'DESC'], 4);
+        $categories = $categoryRepository->findBy([], ['id' => 'DESC']);
 
         return $this->render('index/index.html.twig', [
             'messages' => $messages,
