@@ -15,7 +15,7 @@ Users can edit their personal information
 
 Administrators have access to a back office 
 
-Usernames are generated with an API when the user creates an account
+Usernames are generated with an [API](https://rapidapi.com/mrsonj/api/random-username-generate/) when the user creates an account
 
 
 ### Roadmap
