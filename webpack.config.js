@@ -20,12 +20,12 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('global', './assets/global.js')
-    .addEntry('accueil', './assets/accueil.js')
-    .addEntry('security', './assets/security.js')
-    .addEntry('profil', './assets/profil.js')
-    .addEntry('message', './assets/message.js')
-    .addEntry('admin', './assets/admin.js')
+    .addEntry('global', './assets/js/global.js')
+    .addEntry('accueil', './assets/js/accueil.js')
+    .addEntry('security', './assets/js/security.js')
+    .addEntry('profil', './assets/js/profil.js')
+    .addEntry('message', './assets/js/message.js')
+    .addEntry('admin', './assets/js/admin.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
