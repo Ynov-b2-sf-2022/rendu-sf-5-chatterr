@@ -25,6 +25,9 @@
 			<div class="experience data">Expérience :
 				{{ app.user.experience }}
 				/ 100 🧪</div>
+			{% if role[0] == "ROLE_ADMIN" %}
+				<a href="{{ path('app_admin_index') }}" class="adminButton">Administration</a>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

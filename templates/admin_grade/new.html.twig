@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Grade{% endblock %}
+
+{% block body %}
+    <h1>Create new Grade</h1>
+
+    {{ include('admin_grade/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_grade_index') }}">back to list</a>
+{% endblock %}
