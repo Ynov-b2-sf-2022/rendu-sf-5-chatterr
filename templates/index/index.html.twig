@@ -23,7 +23,10 @@
         'categories' : categories,
       } %}
   {% include './components/categories.html.twig' with categoryVars %}
-  {% include './components/navbar.html.twig' %}
+  {% if connected %}
+    {% include './components/navbar.html.twig' %}
+  {% endif %}
+    
   
 
   <div class="titleContent">
