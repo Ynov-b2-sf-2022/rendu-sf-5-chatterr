@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfilController!
+{% block title %}Profil 📈
 {% endblock %}
 
 {% block stylesheets %}
@@ -25,9 +25,16 @@
 			<div class="experience data">Expérience :
 				{{ app.user.experience }}
 				/ 100 🧪</div>
-			{% if role[0] == "ROLE_ADMIN" %}
-				<a href="{{ path('app_admin_index') }}" class="adminButton">Administration</a>
-			{% endif %}
+			<div class="buttons">
+				<a href="/logout" class="">
+					<button class="logoutButton">Deconnexion</button>
+				</a>
+				{% if role[0] == "ROLE_ADMIN" %}
+					<a href="{{ path('app_admin_index') }}">
+						<button class="adminButton">Administration</button>
+					</a>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 {% endblock %}
