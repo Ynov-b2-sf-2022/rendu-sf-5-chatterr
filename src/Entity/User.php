@@ -44,6 +44,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 255)]
     private $email;
 
+    //tostring
+    public function __toString()
+    {
+        return $this->roles[0];
+    }
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
@@ -144,11 +150,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->experience = $experience;
 
         return $this;
-    }
-
-    public function __toString(): string
-    {
-        return $this->username;
     }
 
     public function getGrade(): ?Grade
