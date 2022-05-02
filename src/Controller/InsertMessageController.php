@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class InsertMessageController extends AbstractController
 {
-    #[Route('/insert/message', name: 'app_insert_message')]
+    #[Route('/category/{categoryName}/insert/message', name: 'app_insert_message')]
     public function index(Request $request): Response
     {        
         $message = new Message();
