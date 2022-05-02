@@ -21,17 +21,21 @@ class InsertCategoryController extends AbstractController
         $categoryForm->handleRequest($request);
 
         if ($categoryForm->isSubmitted() && $categoryForm->isValid()) {
-            
+            //check if category already exists, if so send message to user
+            $categoryRepository = $entityManager->getRepository(Category::class);
+            $testCategory = $categoryRepository->findOneBy(['name' => $category->getName()]);
+            if($testCategory) {
+                $this->addFlash('success', 'Categorie déjà existante');
+                // return $this->redirectToRoute('app_index');
+            } else {
+                $category->setName($categoryForm->get('name')->getData())
+                    ->setUser($this->getUser());
+                $entityManager->persist($category);
+                $entityManager->flush();
+                $this->addFlash('success', 'Categorie ajoutée');
+                return $this->redirectToRoute('app_index');
+            }
 
-            $category->setName($categoryForm->get('name')->getData())
-                ->setUser($this->getUser());
-            $entityManager->persist($category);
-            $entityManager->flush();
-
-            //print inserted in console
-            // $this->addFlash('success', 'Category inserted!');
-
-            return $this->redirectToRoute('app_index');
         }
 
         return $this->render('insert_category/index.html.twig', [

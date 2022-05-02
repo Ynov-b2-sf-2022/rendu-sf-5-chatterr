@@ -9,6 +9,14 @@
 </style>
 
 <div class="example-wrapper">
+{# FLASH MESSAGES #}
+{% for type, messages in app.flashes(['success', 'info', 'warning', 'danger']) %}
+  {% for message in messages %}
+    <div class="alert alert-{{ type }}" role="alert">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endfor %}
     <div class="container">
 
         {{ form_start(form) }}
