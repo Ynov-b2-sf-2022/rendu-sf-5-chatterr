@@ -12,8 +12,8 @@
 	<h1 class="title">Register</h1>
 	<div class="formulaire">
 		{{ form_start(registrationForm) }}
-		<div class="input-field" class="validate">
-			{{ form_row(registrationForm.username) }}
+		<div class="input-field" value="zebouloux" class="validate">
+			{{ form_row(registrationForm.username, {'value' : username}) }}
 		</div>
 		<div class="input-field" class="validate">
 			{{ form_row(registrationForm.email) }}
