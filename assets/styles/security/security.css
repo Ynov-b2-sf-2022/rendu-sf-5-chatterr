@@ -59,3 +59,14 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.para {
+  color: lightskyblue
+}

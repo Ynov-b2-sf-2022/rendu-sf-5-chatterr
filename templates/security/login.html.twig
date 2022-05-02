@@ -30,7 +30,10 @@
 			<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-			<div class="TESTT">
+			<div class="buttonWrapper">
+				<a href="/reset-password">
+					<p class="para">Mot de passe oublié ?</p>
+				</a>
 				<a href="/register">
 					<svg id="person_add_black_24dp_1_" data-name="person_add_black_24dp(1)" xmlns="http://www.w3.org/2000/svg" width="84.243" height="84.243" viewbox="0 0 84.243 84.243">
 						<path id="Tracé_4" data-name="Tracé 4" d="M0,0H84.243V84.243H0Z" fill="none"/>
