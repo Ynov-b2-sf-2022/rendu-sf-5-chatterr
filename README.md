@@ -39,6 +39,7 @@ Usernames are generated with an [API](https://rapidapi.com/mrsonj/api/random-use
 ![App Screenshot](githubAssets/4.png)
 ![App Screenshot](githubAssets/5.png)
 ![App Screenshot](githubAssets/6.png)
+![App Screenshot](githubAssets/7.png)
 
 
 
