@@ -22,6 +22,7 @@ class InsertMessageController extends AbstractController
         $message = new Message();
         $messageForm = $this->createForm(InsertMessageType::class, $message);
         $messageForm->handleRequest($request);
+        $user = $this->getUser();
 
         if ($messageForm->isSubmitted() && $messageForm->isValid()) {
             //retrieve a category by its name
@@ -31,22 +32,23 @@ class InsertMessageController extends AbstractController
                 ->setUser($this->getUser())
                 ->setContent($messageForm->get('content')->getData());
 
-            $exp = $experienceService->getExperience($userRepository, $this->getUser()->getUserIdentifier());
+            $exp = $experienceService->getExperience($userRepository, $user->getUserIdentifier());
 
             if ($exp <= 100) {
                 //manage the user experience
-                $experienceService->setExperience($userRepository, $this->getUser()->getUserIdentifier(), $exp + 1);
+                $user->setExperience($exp+1);
+                // $experienceService->setExperience($userRepository, $this->getUser()->getUserIdentifier(), $exp + 1);
             }
 
             //manage the user grade
-            
+            $exp = $user->getExperience();
             $roundedValue = intval($exp / 25);
             if ($roundedValue > 4) {
                 $roundedValue = 4;
             }
 
             //give the grade corresponding to the xp of the user
-            $user = $this->getUser();
+            
             $grade = $gradeRepository->findAll();
             // $user->setGrade($grade[$roundedValue]);
             $count = 0;

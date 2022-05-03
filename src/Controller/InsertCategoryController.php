@@ -7,6 +7,7 @@ use App\Form\CategoryType;
 
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Category;
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,6 +25,7 @@ class InsertCategoryController extends AbstractController
         $category = new Category();
         $categoryForm = $this->createForm(CategoryType::class, $category);
         $categoryForm->handleRequest($request);
+        $user = $this->getUser();
 
         if ($categoryForm->isSubmitted() && $categoryForm->isValid()) {
             //check if category already exists, if so send message to user
@@ -36,31 +38,32 @@ class InsertCategoryController extends AbstractController
                 $category->setName($categoryForm->get('name')->getData())
                     ->setUser($this->getUser());
 
-            $exp = $experienceService->getExperience($userRepository, $this->getUser()->getUserIdentifier());
+                    $exp = $experienceService->getExperience($userRepository, $user->getUserIdentifier());
 
-                if ($exp <= 100) {
-                    //manage the user experience
-                    $experienceService->setExperience($userRepository, $this->getUser()->getUserIdentifier(), $exp + 5);
-                }
-
-                //manage the user grade
-            
-            $roundedValue = intval($exp / 25);
-            if ($roundedValue > 4) {
-                $roundedValue = 4;
-            }
-
-            //give the grade corresponding to the xp of the user
-            $user = $this->getUser();
-            $grade = $gradeRepository->findAll();
-
-            $count = 0;
-            foreach ($grade as $grad) {
-                if ($count == $roundedValue) {
-                    $user->setGrade($grad);
-                }
-                $count ++;
-            }
+                    if ($exp <= 100) {
+                        //manage the user experience
+                        $user->setExperience($exp+5);
+                        // $experienceService->setExperience($userRepository, $this->getUser()->getUserIdentifier(), $exp + 1);
+                    }
+        
+                    //manage the user grade
+                    $exp = $user->getExperience();
+                    $roundedValue = intval($exp / 25);
+                    if ($roundedValue > 4) {
+                        $roundedValue = 4;
+                    }
+        
+                    //give the grade corresponding to the xp of the user
+                    
+                    $grade = $gradeRepository->findAll();
+                    // $user->setGrade($grade[$roundedValue]);
+                    $count = 0;
+                    foreach ($grade as $grad) {
+                        if ($count == $roundedValue) {
+                            $user->setGrade($grad);
+                        }
+                        $count ++;
+                    }
                     
                 $entityManager->persist($user);
                 $entityManager->persist($category);
