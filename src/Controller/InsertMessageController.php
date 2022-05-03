@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Message;
 use App\Form\InsertMessageType;
 use App\Service\ExperienceService;
-use App\Service\GradeService;
 use App\Repository\CategoryRepository;
 use App\Repository\GradeRepository;
 use App\Repository\UserRepository;
@@ -17,37 +16,50 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class InsertMessageController extends AbstractController
 {
-    #[Route('/category/{categoryName}/insert/message', name: 'app_insert_message')]
-    public function index(GradeRepository $gradeRepository, GradeService $gradeService, ExperienceService $experienceService, UserRepository $userRepository, Request $request, string $categoryName, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
+    #[Route('/category/{categoryId}/insert/message', name: 'app_insert_message')]
+    public function index(GradeRepository $gradeRepository, ExperienceService $experienceService, UserRepository $userRepository, Request $request, string $categoryId, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
     {
         $message = new Message();
         $messageForm = $this->createForm(InsertMessageType::class, $message);
         $messageForm->handleRequest($request);
+        $user = $this->getUser();
 
         if ($messageForm->isSubmitted() && $messageForm->isValid()) {
             //retrieve a category by its name
-            $category = $categoryRepository->findOneBy(['name' => $categoryName]);
+            $category = $categoryRepository->findOneBy(['name' => $categoryId]);
 
             $message->setCategory($category)
                 ->setUser($this->getUser())
                 ->setContent($messageForm->get('content')->getData());
 
-            $exp = $experienceService->getExperience($userRepository, $this->getUser()->getUserIdentifier());
+            $exp = $experienceService->getExperience($userRepository, $user->getUserIdentifier());
 
             if ($exp <= 100) {
                 //manage the user experience
-                $experienceService->setExperience($userRepository, $this->getUser()->getUserIdentifier(), $exp + 1);
+                $user->setExperience($exp+1);
+                // $experienceService->setExperience($userRepository, $this->getUser()->getUserIdentifier(), $exp + 1);
             }
 
             //manage the user grade
-            $grade = $gradeService->getGrade($userRepository, $this->getUser()->getUserIdentifier());
-
-            if (intval($exp / 25) + 1 > 99) {
-                $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), 4);
-            } else {
-                $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), intval($exp / 25) + 1);
+            $exp = $user->getExperience();
+            $roundedValue = intval($exp / 25);
+            if ($roundedValue > 4) {
+                $roundedValue = 4;
             }
 
+            //give the grade corresponding to the xp of the user
+            
+            $grade = $gradeRepository->findAll();
+            // $user->setGrade($grade[$roundedValue]);
+            $count = 0;
+            foreach ($grade as $grad) {
+                if ($count == $roundedValue) {
+                    $user->setGrade($grad);
+                }
+                $count ++;
+            }
+                    
+            $entityManager->persist($user);
             $entityManager->persist($message);
             $entityManager->flush();
             
