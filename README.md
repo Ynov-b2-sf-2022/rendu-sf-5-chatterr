@@ -33,7 +33,11 @@ Usernames are generated with an [API](https://rapidapi.com/mrsonj/api/random-use
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](githubAssets/1.png)
+![App Screenshot](githubAssets/2.png)
+![App Screenshot](githubAssets/3.png)
+![App Screenshot](githubAssets/4.png)
+![App Screenshot](githubAssets/5.png)
 
 
 ## Environment Variables
