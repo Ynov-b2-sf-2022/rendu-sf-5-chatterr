@@ -35,12 +35,17 @@ class InsertMessageController extends AbstractController
             $exp = $experienceService->getExperience($userRepository, $this->getUser()->getUserIdentifier());
 
             if ($exp <= 100) {
-            //manage the user experience
-            $experienceService->setExperience($userRepository, $this->getUser()->getUserIdentifier(), $exp + 1);
+                //manage the user experience
+                $experienceService->setExperience($userRepository, $this->getUser()->getUserIdentifier(), $exp + 1);
+            }
 
             //manage the user grade
             $grade = $gradeService->getGrade($userRepository, $this->getUser()->getUserIdentifier());
-            $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), intval($exp / 25) + 1);
+
+            if (intval($exp / 25) + 1 > 99) {
+                $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), 4);
+            } else {
+                $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), intval($exp / 25) + 1);
             }
 
             $entityManager->persist($message);
