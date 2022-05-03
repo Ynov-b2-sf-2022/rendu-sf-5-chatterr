@@ -25,6 +25,8 @@ Encore
     .addEntry('security', './assets/js/security.js')
     .addEntry('profil', './assets/js/profil.js')
     .addEntry('message', './assets/js/message.js')
+    .addEntry('insert_message', './assets/js/insert_message.js')
+
     .addEntry('admin', './assets/js/admin.js')
     .addEntry('category', './assets/js/category.js')
 
