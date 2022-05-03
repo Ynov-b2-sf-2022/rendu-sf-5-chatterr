@@ -17,8 +17,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class InsertMessageController extends AbstractController
 {
-    #[Route('/category/{categoryName}/insert/message', name: 'app_insert_message')]
-    public function index(GradeRepository $gradeRepository, GradeService $gradeService, ExperienceService $experienceService, UserRepository $userRepository, Request $request, string $categoryName, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
+    #[Route('/category/{categoryId}/insert/message', name: 'app_insert_message')]
+    public function index(GradeRepository $gradeRepository, GradeService $gradeService, ExperienceService $experienceService, UserRepository $userRepository, Request $request, string $categoryId, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
     {
         $message = new Message();
         $messageForm = $this->createForm(InsertMessageType::class, $message);
@@ -26,7 +26,7 @@ class InsertMessageController extends AbstractController
 
         if ($messageForm->isSubmitted() && $messageForm->isValid()) {
             //retrieve a category by its name
-            $category = $categoryRepository->findOneBy(['name' => $categoryName]);
+            $category = $categoryRepository->findOneBy(['name' => $categoryId]);
 
             $message->setCategory($category)
                 ->setUser($this->getUser())
@@ -40,14 +40,25 @@ class InsertMessageController extends AbstractController
             }
 
             //manage the user grade
-            $grade = $gradeService->getGrade($userRepository, $this->getUser()->getUserIdentifier());
-
-            if (intval($exp / 25) + 1 > 99) {
-                $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), 4);
-            } else {
-                $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), intval($exp / 25) + 1);
+            
+            $roundedValue = intval($exp / 25);
+            if ($roundedValue > 4) {
+                $roundedValue = 4;
             }
 
+            //give the grade corresponding to the xp of the user
+            $user = $this->getUser();
+            $grade = $gradeRepository->findAll();
+            // $user->setGrade($grade[$roundedValue]);
+            $count = 0;
+            foreach ($grade as $grad) {
+                if ($count == $roundedValue) {
+                    $user->setGrade($grad);
+                }
+                $count ++;
+            }
+                    
+            $entityManager->persist($user);
             $entityManager->persist($message);
             $entityManager->flush();
             

@@ -45,14 +45,25 @@ class InsertCategoryController extends AbstractController
                 }
 
                 //manage the user grade
-                $grade = $gradeService->getGrade($userRepository, $this->getUser()->getUserIdentifier());
-                
-                if (intval($exp / 25) + 1 > 99) {
-                    $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), 4);
-                } else {
-                    $gradeService->setGrade($userRepository, $gradeRepository, $this->getUser()->getUserIdentifier(), intval($exp / 25) + 1);
-                }
+            
+            $roundedValue = intval($exp / 25);
+            if ($roundedValue > 4) {
+                $roundedValue = 4;
+            }
 
+            //give the grade corresponding to the xp of the user
+            $user = $this->getUser();
+            $grade = $gradeRepository->findAll();
+
+            $count = 0;
+            foreach ($grade as $grad) {
+                if ($count == $roundedValue) {
+                    $user->setGrade($grad);
+                }
+                $count ++;
+            }
+                    
+                $entityManager->persist($user);
                 $entityManager->persist($category);
                 $entityManager->flush();
                 $this->addFlash('success', 'Categorie ajoutée');
