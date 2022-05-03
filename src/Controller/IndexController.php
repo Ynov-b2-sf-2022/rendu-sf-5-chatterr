@@ -15,7 +15,7 @@ class IndexController extends AbstractController
     {
         //retrieve all the messages 
         $messages = $messageRepository->findAll();
-        
+
         //retrieve last 4 categories
         $categories = $categoryRepository->findBy([], ['id' => 'DESC']);
 
