@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Form\CategoryType;
 
 
@@ -24,7 +25,7 @@ class InsertCategoryController extends AbstractController
             //check if category already exists, if so send message to user
             $categoryRepository = $entityManager->getRepository(Category::class);
             $testCategory = $categoryRepository->findOneBy(['name' => $category->getName()]);
-            if($testCategory) {
+            if ($testCategory) {
                 $this->addFlash('success', 'Categorie déjà existante');
                 // return $this->redirectToRoute('app_index');
             } else {
@@ -35,7 +36,6 @@ class InsertCategoryController extends AbstractController
                 $this->addFlash('success', 'Categorie ajoutée');
                 return $this->redirectToRoute('app_index');
             }
-
         }
 
         return $this->render('insert_category/index.html.twig', [
