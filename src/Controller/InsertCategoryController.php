@@ -12,7 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\ExperienceService;
-use App\Service\GradeService;
 use App\Repository\CategoryRepository;
 use App\Repository\GradeRepository;
 use App\Repository\UserRepository;
@@ -20,7 +19,7 @@ use App\Repository\UserRepository;
 class InsertCategoryController extends AbstractController
 {
     #[Route('/insert/category', name: 'app_insert_category')]
-    public function index(GradeRepository $gradeRepository, GradeService $gradeService, ExperienceService $experienceService, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager): Response
+    public function index(GradeRepository $gradeRepository, ExperienceService $experienceService, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager): Response
     {
         $category = new Category();
         $categoryForm = $this->createForm(CategoryType::class, $category);

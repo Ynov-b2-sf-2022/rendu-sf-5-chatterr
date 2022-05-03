@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Message;
 use App\Form\InsertMessageType;
 use App\Service\ExperienceService;
-use App\Service\GradeService;
 use App\Repository\CategoryRepository;
 use App\Repository\GradeRepository;
 use App\Repository\UserRepository;
@@ -18,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class InsertMessageController extends AbstractController
 {
     #[Route('/category/{categoryId}/insert/message', name: 'app_insert_message')]
-    public function index(GradeRepository $gradeRepository, GradeService $gradeService, ExperienceService $experienceService, UserRepository $userRepository, Request $request, string $categoryId, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
+    public function index(GradeRepository $gradeRepository, ExperienceService $experienceService, UserRepository $userRepository, Request $request, string $categoryId, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
     {
         $message = new Message();
         $messageForm = $this->createForm(InsertMessageType::class, $message);
