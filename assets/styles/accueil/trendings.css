@@ -1,0 +1,41 @@
+.categories {
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.trendingImages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.globalCategory {
+    position: relative;
+    width: 100%;
+    border-radius: 1.625rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.trendingImage {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.4);
+    border-radius: 1.625rem;
+}
+
+.categoryName {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    /* padding: 0.5rem; */
+}

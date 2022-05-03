@@ -1,0 +1,28 @@
+.container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+button {
+    width: 180px;
+    height: 80px;
+    margin: 30px;
+}
+
+.buttonCustom {
+    color: #5348C7;
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 10px;
+    border: solid 3px #5348C7;
+    transition: 0.7s;
+}
+.buttonCustom:hover {
+    color: white;
+    box-shadow: inset 0 0 0 1em #5348C7;
+}

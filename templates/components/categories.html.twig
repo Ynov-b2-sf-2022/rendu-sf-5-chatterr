@@ -1,0 +1,12 @@
+<div class="categories">
+    <div class="trendingImages">
+
+      {% for category in categoryVars['categories'] %}
+        <a href={{ "category/" ~ category.id }} class="globalCategory">
+          <img class="trendingImage" src="http://placeimg.com/600/600/any" alt="logo" class="logo">
+          <h2 class="categoryName">{{category.name}}</h2>
+        </a>
+      {% endfor %}
+      
+    </div>
+</div>

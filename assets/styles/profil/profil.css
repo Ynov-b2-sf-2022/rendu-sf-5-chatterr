@@ -1,0 +1,36 @@
+.wrapper {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilContainer {
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.title {
+    grid-column: 1/3;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.data {
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 4.8rem;
+}
+
+.buttons {
+    grid-column: 1/3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in! 🦧
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('security') }}
+	{{ encore_entry_link_tags('global') }}
+{% endblock %}
+
+{% block body %}
+	<form method="post">
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+
+		{% if app.user %}
+			<div class="mb-3">
+				You are logged in as
+				{{ app.user.username }},
+				<a href="{{ path('app_logout') }}">Logout</a>
+			</div>
+		{% endif %}
+
+		<div class="formulaire">
+			<h1 class="title">Connectez-vous ! 🤩</h1>
+			<label for="inputUsername">Pseudo</label>
+			<input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+			<label for="inputPassword">Mot de passe</label>
+			<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+			<div class="buttonWrapper">
+				<a href="/reset-password">
+					<p class="para">Mot de passe oublié ?</p>
+				</a>
+				<a href="/register">
+					<svg id="person_add_black_24dp_1_" data-name="person_add_black_24dp(1)" xmlns="http://www.w3.org/2000/svg" width="84.243" height="84.243" viewbox="0 0 84.243 84.243">
+						<path id="Tracé_4" data-name="Tracé 4" d="M0,0H84.243V84.243H0Z" fill="none"/>
+						<path id="Tracé_5" data-name="Tracé 5" d="M50.142,32.081A14.041,14.041,0,1,0,36.1,18.041,14.037,14.037,0,0,0,50.142,32.081Zm-31.591-7.02V14.53H11.53v10.53H1v7.02H11.53v10.53h7.02V32.081h10.53v-7.02ZM50.142,39.1c-9.372,0-28.081,4.7-28.081,14.041v7.02H78.223v-7.02C78.223,43.805,59.514,39.1,50.142,39.1Z" transform="translate(2.51 10.041)" fill="#5348c7"/>
+					</svg>
+				</a>
+
+				<button class="customBtn" type="submit">
+					➡
+				</button>
+			</div>
+		</div>
+	</form>
+{% endblock %}
